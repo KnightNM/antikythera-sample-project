@@ -9,6 +9,7 @@ import sa.com.cloudsolutions.repository.PersonRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 
 @Component
 public class Service {
@@ -48,7 +49,7 @@ public class Service {
         Optional<Person> p = personRepository.findById(id);
     }
 
-    public void queries5(int id) {
+    public void queries5(Long id) {
         Optional<Person> p = personRepository.findById(id);
     }
 }
