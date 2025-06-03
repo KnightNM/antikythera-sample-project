@@ -1,7 +1,6 @@
 package sa.com.cloudsolutions.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import sa.com.cloudsolutions.dto.EmployeeDepartmentDTO;
 import sa.com.cloudsolutions.model.Person;
 import sa.com.cloudsolutions.repository.DepartmentRepository;
@@ -11,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Map;
 
-@Component
+
+@org.springframework.stereotype.Service
 public class Service {
     @Autowired
     private PersonRepository personRepository;
@@ -30,11 +30,10 @@ public class Service {
         List<Person> ageLessThanEqual = personRepository.findByAgeLessThanEqual(10);
         List<Person> ageGreaterThanEqual = personRepository.findByAgeGreaterThanEqual(10);
         List<Person> ageIn = personRepository.findByAgeIn(new int[]{10, 20, 30});
-        List<Person> ageNotIn = personRepository.findByAgeNotIn(new int[]{10, 20, 30});
+        List<Person> ageNotIn = personRepository.findByAgeNotIn(new int[] {10, 20, 30});
         List<Person> ageIsNull = personRepository.findByAgeIsNull();
         List<Person> ageIsNotNull = personRepository.findByAgeIsNotNull();
         List<Person> ageLike = personRepository.findByNameLike("10");
-
     }
 
     public void queries2() {
@@ -53,4 +52,3 @@ public class Service {
         Optional<Person> p = personRepository.findById(id);
     }
 }
-
