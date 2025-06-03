@@ -3,6 +3,7 @@ package sa.com.cloudsolutions.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import sa.com.cloudsolutions.dto.EmployeeDepartmentDTO;
 import sa.com.cloudsolutions.model.Person;
 import sa.com.cloudsolutions.repository.DepartmentRepository;
@@ -14,9 +15,9 @@ import java.util.Map;
 
 
 @SuppressWarnings("unused")
-@org.springframework.stereotype.Service
-public class Service {
-    private static final Logger logger = LoggerFactory.getLogger(Service.class);
+@Service
+public class PersonService {
+    private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
 
     @Autowired
     private PersonRepository personRepository;
