@@ -1,5 +1,7 @@
 package sa.com.cloudsolutions.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import sa.com.cloudsolutions.dto.EmployeeDepartmentDTO;
 import sa.com.cloudsolutions.model.Person;
@@ -11,8 +13,11 @@ import java.util.Optional;
 import java.util.Map;
 
 
+@SuppressWarnings("unused")
 @org.springframework.stereotype.Service
 public class Service {
+    private static final Logger logger = LoggerFactory.getLogger(Service.class);
+
     @Autowired
     private PersonRepository personRepository;
     @Autowired
@@ -50,5 +55,6 @@ public class Service {
 
     public void queries5(Long id) {
         Optional<Person> p = personRepository.findById(id);
+        logger.info("Query5 executed");
     }
 }
